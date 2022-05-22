@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const Item = require('../models/items')
-const alert = require('alert'); 
 
 router.get('/', (req, res) => {
     Item.find({deleted: 'false'}, (err, items) => {

@@ -20,3 +20,4 @@ npm i express mongoose dotenv ejs method-override
 
 
 Then simply start the app using the CLI (```nodemon``` || ``` node server.js```) and type "http://localhost:3000/inv" into your address bar, and you're good to go.
+(Another note: make sure ```"main":``` is set to ```"server.js"``` in your package.json)
