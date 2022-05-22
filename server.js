@@ -38,7 +38,13 @@ db.on('error', (err) => {
   const invController = (require('./controllers/invController.js'))
   app.use('/', invController)
 
-
+  app.get('/', (req, res) => {
+    Item.find({deleted: 'false'}, (err, items) => {
+    res.render('index.ejs', {
+      items: items
+      })
+    })
+  })
 
   app.listen(port, () => {
     console.log('app is running on port ' + port)
