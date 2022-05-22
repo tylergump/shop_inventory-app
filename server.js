@@ -12,11 +12,11 @@ app.use(express.urlencoded({extended: false}))
 const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
 
-const mongoURI = process.env.MONGODB_URI || "mongodb://0.0.0.0/items"
+const MONGODB_URI = process.env.MONGODB_URI
 
 const db = mongoose.connection
 
-mongoose.connect(mongoURI, {
+mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }, () => {
