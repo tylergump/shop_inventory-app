@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: false}))
 const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
 
-const mongoURI = process.env.MONGODB_URI || "mongodb://127.0.0.1/items"
+const mongoURI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017"
 
 const db = mongoose.connection
 
@@ -38,9 +38,7 @@ db.on('error', (err) => {
   const invController = (require('./controllers/invController.js'))
   app.use('/', invController)
 
-  app.get('/', (req, res) => {
-    res.send('Hello World!'); // or do whatever you want with req or res
-  })
+
 
   app.listen(port, () => {
     console.log('app is running on port ' + port)
