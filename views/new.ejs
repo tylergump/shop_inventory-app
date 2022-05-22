@@ -1,0 +1,22 @@
+<%- include('./partials/header.ejs') %>
+
+<h1>New Product</h1>
+
+<form action="/inv" method="post">
+
+  Name: <input  type="text" 
+                name="name" 
+                value=""> <br/>
+
+
+
+  Quantity: <input  type="text" 
+                    name="qty"
+                    placeholder="Quantity"> <br/>
+
+  <input  type="submit" 
+          name="" 
+          value="Create Item">
+</form>
+
+<%- include('./partials/footer.ejs') %>

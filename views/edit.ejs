@@ -1,0 +1,27 @@
+<%- include('./partials/header.ejs') %>
+<h1>Edit Item Page</h1>
+<form action="/inv/<%=item.id%>?_method=PUT" method="post">
+  Name: <input type="text" name="name" value="<%=item.name%>"> <br/>
+
+
+  Quantity: <input type="text" name="qty" value="<%=item.qty%>"> <br/>
+
+  <!-- <input type="submit" name="" value="Update"> -->
+  <%if (item.deleted) {%>
+  
+  Deletion Reason: 
+  <input 
+    name="deletionReason" 
+    type="input"
+    value="<%=item.deletionReason%>">
+     <br/>
+
+     <%}%>
+
+     <input type="submit" name="" value="Update">
+
+
+</form>
+
+
+<%- include('./partials/footer.ejs') %> 
