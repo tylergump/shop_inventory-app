@@ -38,8 +38,10 @@ db.on('error', (err) => {
   const invController = (require('./controllers/invController.js'))
   app.use('/inv', invController)
 
-  const query = Item.findOne({'deleted' : 'true'})
-
+  app.get('/', (req, res) => {
+    res.send('Hello World!'); // or do whatever you want with req or res
+  })
+  
   app.listen(port, () => {
     console.log('app is running on port ' + port)
   })
