@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: false}))
 const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
 
-const mongoURI = process.env.MONGODB_URI || "mongodb://0.0.0.0/items"
+const mongoURI = process.env.MONGODB_URI || "mongodb://localhost/items"
 
 const db = mongoose.connection
 
@@ -39,11 +39,7 @@ db.on('error', (err) => {
   app.use('/', invController)
 
   app.get('/', (req, res) => {
-    Item.find({deleted: 'false'}, (err, items) => {
-    res.render('index.ejs', {
-      items: items
-      })
-    })
+    res.send('Hello World!'); // or do whatever you want with req or res
   })
 
   app.listen(port, () => {
