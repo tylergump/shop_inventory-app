@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
     res.send(error)
   } else {
     console.log(createdItem)
-    res.redirect('/inv')
+    res.redirect('/')
   }
 })
 })
@@ -53,7 +53,7 @@ router.delete('/:id', (req, res) => {
       console.log(error)
       res.send(error)
     } else {
-      res.redirect('/inv')
+      res.redirect('/')
       console.log("You hard deleted ", deletedItem)
     }
   })
@@ -74,7 +74,7 @@ router.put('/:id', (req, res) => {
       res.send(error)
     } else {
 
-      res.redirect('/inv/'+ req.params.id)
+      res.redirect('/'+ req.params.id)
       console.log(req.body)
     }
   })
@@ -85,7 +85,7 @@ router.get('/del', (req, res) => {
     if (err) return handleErr(err);
   
     console.log(item.name, item.qty, item.deleted)
-    res.redirect('/inv')
+    res.redirect('/')
   })
 })
 
@@ -98,7 +98,7 @@ router.put('/:id/del', (req, res) => {
     res.send(error)
   } else {
     console.log("You soft deleted", foundItem)
-    res.redirect('/inv/'+ req.params.id)
+    res.redirect('/'+ req.params.id)
   }
 })
 })
@@ -110,7 +110,7 @@ router.put('/:id/undel', (req, res) => {
     res.send(error)
   } else {
     console.log("You undeleted", foundItem)
-    res.redirect('/inv/'+ req.params.id)
+    res.redirect('/'+ req.params.id)
   }
 })
 })
@@ -121,7 +121,7 @@ router.put('/:id/', (req, res) => {
     console.log(error)
     res.send(error)
   } else {
-    res.redirect('/inv/'+ req.params.id)
+    res.redirect('/'+ req.params.id)
     console.log(req.body.deleted)
   }
 })

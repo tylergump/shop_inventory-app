@@ -1,6 +1,6 @@
 <%- include('./partials/header.ejs') %>
 <h1>Edit Item Page</h1>
-<form action="/inv/<%=item.id%>?_method=PUT" method="post">
+<form action="/<%=item.id%>?_method=PUT" method="post">
   Name: <input type="text" name="name" value="<%=item.name%>"> <br/>
 
 
